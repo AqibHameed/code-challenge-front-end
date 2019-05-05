@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DsListService } from  './app.service';  
+import { DsListService } from  './upload_file.service';
+import { GetAllAssets } from  './get_all_assets.service';   
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +16,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [DsListService],
+  providers: [DsListService, GetAllAssets],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

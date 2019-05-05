@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import { DsListService } from  './app.service';  
+import { Component, OnInit } from '@angular/core';
+import { DsListService } from  './upload_file.service';  
+import { GetAllAssets } from  './get_all_assets.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
-  providers: [DsListService] 
+  providers: [DsListService, GetAllAssets] 
 })
 export class AppComponent{
   title = 'front-end-code-challenge';
   apiEndPoint = "http://localhost:3000/upload_file";
-  constructor(private _dsListService: DsListService) { }  
+  public show:boolean = false;
+  public buttonName:any = 'Get All Assets Record';
+  assets: string[];
+
+  constructor(private _dsListService: DsListService,
+  	          private _getAllAssets: GetAllAssets) { }  
+  ngOnInit () {  }
+
   uploadDatasource(fileInput: any) {
 
 	let file = fileInput.target.files[0];
@@ -36,4 +44,21 @@ export class AppComponent{
 	    });
 
 	}
+   
+	toggle() {
+	    this.show = true;
+
+	    // CHANGE THE NAME OF THE BUTTON.
+	    if(this.show) {
+	        this._getAllAssets.getAssetsRecord()
+	           .subscribe(
+				    response => { 
+				      this.assets = response;
+				      console.log(response);
+				    },
+				    error => {
+				      console.log('error',error)
+				    });
+	    }
+    }
 }
