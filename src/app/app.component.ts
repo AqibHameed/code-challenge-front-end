@@ -36,16 +36,17 @@ export class AppComponent{
 	  .subscribe(
 	    response => { 
 	      console.log('UPLOADING success');
-
+          alert("UPLOADING success");
 
 	    },
 	    error => {
 	      console.log('error',error)
+	      alert('File not Upload');
 	    });
 
 	}
    
-	toggle() {
+	getAssets() {
 	    this.show = true;
 
 	    // CHANGE THE NAME OF THE BUTTON.
@@ -54,6 +55,7 @@ export class AppComponent{
 	           .subscribe(
 				    response => { 
 				      this.assets = response;
+
 				      console.log(response);
 				    },
 				    error => {
