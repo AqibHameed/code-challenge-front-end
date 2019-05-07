@@ -35,8 +35,8 @@ export class AppComponent{
 	this._dsListService.uploadDatasource(formData)
 	  .subscribe(
 	    response => { 
-	      console.log('UPLOADING success');
-          alert("UPLOADING success");
+	      console.log('FILE Upload Successfully');
+          alert("FILE Upload Successfully");
 
 	    },
 	    error => {
@@ -55,7 +55,7 @@ export class AppComponent{
 	           .subscribe(
 				    response => { 
 				      this.assets = response;
-
+                      alert("Data Fetch successfully");
 				      console.log(response);
 				    },
 				    error => {
