@@ -15,31 +15,33 @@
     <thead>
       <tr>
         <th scope="col">address</th>
-        <th scope="col">area_rented</th>
+        <th scope="col">zipcode</th>
         <th scope="col">city</th>
-        <th scope="col">number_of_units</th>
+        <th scope="col">year_of_construction</th>
         <th scope="col">restricted_area</th>
-        <th scope="col">total_area</th>
+        <th scope="col">number_of_units</th>
         <th scope="col">total_rent</th>
+        <th scope="col">total_area</th>
+        <th scope="col">area_rented</th>
         <th scope="col">vacancy</th>
         <th scope="col">walt</th>
-        <th scope="col">year_of_construction</th>
-        <th scope="col">zipcode</th>
+        <th scope="col">latest_update</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let asset of assets">
         <td>{{asset.address}}</td>
-        <td>{{asset.area_rented}}</td>
+        <td>{{asset.zipcode}}</td>
         <td>{{asset.city}}</td>
-        <td>{{asset.number_of_units}}</td>
+        <td>{{asset.year_of_construction}}</td>
         <td>{{asset.restricted_area}}</td>
-        <td>{{asset.total_area}}</td>
+        <td>{{asset.number_of_units}}</td>
         <td>{{asset.total_rent}}</td>
+        <td>{{asset.total_area}}</td>
+        <td>{{asset.area_rented}}</td>
         <td>{{asset.vacancy}}</td>
         <td>{{asset.walt}}</td>
-        <td>{{asset.year_of_construction}}</td>
-        <td>{{asset.zipcode}}</td>
+        <td>{{asset.latest_update}}</td>
       </tr>
     </tbody>
   </table>
